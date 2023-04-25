@@ -1,0 +1,58 @@
+body{
+    background: url("https://stepik.org/media/attachments/lesson/374893/world.png") no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Bruno Ace SC', cursive;
+
+}
+h1{
+    text-align: center;
+}
+
+
+.container{
+    position: absolute;
+    left: 25%;
+    width: 50vw;
+    height: 50vh;
+    display: grid;
+    gap: 1px;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3, 1fr);
+
+}
+.card{
+    position: relative;
+    background-image: linear-gradient(#f23,#edd);
+    width: 150px;
+    height: 150px;
+    border: 2px solid bisque;
+    display: flex;
+
+
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+
+    transition: all 2s 0s ease;
+    transform-style: preserve-3d;
+}
+.card:hover{
+    transform: rotateY(180deg);
+    background-image: linear-gradient(#eedddd,#aaccdd);
+
+}
+
+.front, .back{
+    backface-visibility: hidden;
+}
+.front{
+    /* 360deg because firefox silliness */
+    transform: rotateY(360deg);
+}
+
+.back{
+    position: absolute;
+    transform: rotateY(180deg);
+
+}
+
